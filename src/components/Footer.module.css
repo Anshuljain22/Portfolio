@@ -1,0 +1,30 @@
+.footer {
+  border-top: 1px solid rgba(0,255,255,0.08);
+  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+.text {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.icons {
+  display: flex;
+  gap: 20px;
+}
+.icons a {
+  color: var(--muted);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.icons a:hover { color: var(--cyan); }
+
+@media (max-width: 600px) {
+  .footer { flex-direction: column; gap: 16px; padding: 24px 20px; }
+}

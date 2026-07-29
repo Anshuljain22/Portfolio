@@ -1,0 +1,133 @@
+:root {
+  --bg: #040d1a;
+  --surface: #080e1a;
+  --cyan: #0ff;
+  --blue: #3b9eff;
+  --text: #e8f4ff;
+  --muted: #6a8fba;
+  --online: #00e5a0;
+  --border: rgba(0,255,255,0.15);
+  --border-hover: rgba(0,255,255,0.5);
+  --font: 'Space Grotesk', sans-serif;
+  --mono: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: #060412; }
+
+body {
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Subtle dot grid on top of physics canvas */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(167,139,250,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+a { text-decoration: none; }
+
+/* Shared section */
+.section-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+.section-heading {
+  font-family: var(--mono);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 48px;
+}
+
+.section-heading::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--cyan);
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+.section-sub {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  margin-top: -36px;
+  margin-bottom: 48px;
+}
+
+/* Shared button */
+.btn {
+  display: inline-block;
+  padding: 11px 26px;
+  border-radius: 999px;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  border: 1px solid transparent;
+}
+.btn-cyan {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: transparent;
+}
+.btn-cyan:hover { background: var(--cyan); color: var(--bg); }
+.btn-ghost {
+  border-color: var(--muted);
+  color: var(--muted);
+  background: transparent;
+}
+.btn-ghost:hover { border-color: var(--text); color: var(--text); }
+
+/* Card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: var(--border-hover); }
+
+/* Badge */
+.badge {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  background: rgba(0,255,255,0.04);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Dot online */
+.dot-online {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--online);
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .section-wrap { padding: 70px 20px; }
+}

@@ -1,0 +1,91 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(0,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+}
+.logo {
+  font-family: var(--mono);
+  color: var(--cyan);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+.links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.link {
+  color: var(--muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+  position: relative;
+  text-decoration: none;
+}
+.link:hover { color: var(--text); }
+.link.active {
+  color: var(--cyan);
+}
+.link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 1px;
+  background: var(--cyan);
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--cyan);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.close {
+  position: absolute;
+  top: 20px; right: 30px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.ovLink {
+  color: var(--text);
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+.ovLink.active { color: var(--cyan); }
+
+@media (max-width: 768px) {
+  .nav { padding: 0 20px; }
+  .links { display: none; }
+  .hamburger { display: flex; }
+}

@@ -1,0 +1,122 @@
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  border-left: 1px solid rgba(0,255,255,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 72px;
+}
+.entry {
+  position: relative;
+}
+.timelineDot {
+  position: absolute;
+  left: -39px;
+  top: 24px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--cyan);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 6px var(--cyan);
+}
+.card { padding: 28px; }
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.company {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.role {
+  font-size: 0.88rem;
+  color: var(--cyan);
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+.period {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.bullets li {
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.6;
+}
+.bullets li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+}
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.techTag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  padding: 3px 10px;
+  border: 1px solid rgba(59,158,255,0.3);
+  color: var(--blue);
+  background: rgba(59,158,255,0.05);
+}
+
+/* Education */
+.eduHeading { margin-top: 0; }
+.eduGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.eduCard { padding: 24px; }
+.degree {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.institution {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--cyan);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+.courses {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.coursesLabel {
+  color: var(--text);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .eduGrid { grid-template-columns: 1fr; }
+  .cardHead { flex-direction: column; }
+}
+@media (max-width: 560px) {
+  .timeline { padding-left: 20px; }
+  .timelineDot { left: -27px; }
+}

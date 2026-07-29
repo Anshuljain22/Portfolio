@@ -1,0 +1,56 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.group {
+  padding: 28px;
+}
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.onlineDot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--online);
+  display: block;
+  box-shadow: 0 0 4px var(--online);
+}
+.onlineLabel {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: var(--online);
+}
+.groupTitle {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  font-weight: 600;
+  margin-left: auto;
+  text-align: right;
+}
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skillTag {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  padding: 6px 14px;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  background: rgba(0,255,255,0.04);
+  letter-spacing: 0.04em;
+  transition: background 0.2s;
+}
+.skillTag:hover { background: rgba(0,255,255,0.1); }
+
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }

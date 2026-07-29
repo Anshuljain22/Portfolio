@@ -1,0 +1,97 @@
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+.filterBtn {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  padding: 7px 18px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.filterBtn:hover { border-color: var(--cyan); color: var(--cyan); }
+.filterActive { border-color: var(--cyan) !important; color: var(--cyan) !important; background: rgba(0,255,255,0.05) !important; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.catDot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  display: block;
+}
+.statusBadge {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  border: 1px solid;
+}
+.statusDeployed { color: var(--online); border-color: var(--online); }
+.statusResearch  { color: var(--blue);   border-color: var(--blue); }
+.statusArchived  { color: var(--muted);  border-color: var(--muted); }
+
+.projName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.projDesc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+  flex: 1;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  padding: 3px 10px;
+  border: 1px solid rgba(59,158,255,0.3);
+  color: var(--blue);
+  background: rgba(59,158,255,0.05);
+}
+.cardLinks {
+  display: flex;
+  gap: 20px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+.iconLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.iconLink:hover { color: var(--cyan); }
+
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
