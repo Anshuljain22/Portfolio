@@ -87,5 +87,8 @@
 @media (max-width: 768px) {
   .nav { padding: 0 20px; }
   .links { display: none; }
-  .hamburger { display: flex; }
+  .hamburger { display: flex; padding: 8px; }
+  .hamburger span { width: 24px; height: 2px; }
+  .close { top: 16px; right: 20px; font-size: 2rem; padding: 10px; }
+  .ovLink { font-size: 1.6rem; padding: 8px 16px; }
 }

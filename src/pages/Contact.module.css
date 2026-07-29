@@ -81,4 +81,10 @@ a.infoValue:hover { color: var(--cyan); }
   border-left: 2px solid var(--cyan);
 }
 
-@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { 
+  .grid { grid-template-columns: 1fr; gap: 32px; }
+  .formCard { padding: 20px; }
+}
+@media (max-width: 600px) {
+  .input { font-size: 16px; } /* Prevents iOS auto-zoom on input focus */
+}

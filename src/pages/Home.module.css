@@ -224,10 +224,28 @@
 }
 
 @media (max-width: 900px) {
-  .aboutGrid { grid-template-columns: 1fr; }
+  .aboutGrid { grid-template-columns: 1fr; gap: 36px; }
   .avatarWrap { margin: 0 auto; }
   .statsRow { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 480px) {
-  .statsRow { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 600px) {
+  .heroContent { padding: 0 16px; }
+  .name {
+    font-size: clamp(2rem, 9vw, 3.2rem);
+    white-space: normal;
+    width: auto;
+    border-right: none;
+    animation: fadeUp 0.8s ease 0.3s forwards;
+    opacity: 0;
+  }
+  .label { font-size: 0.65rem; letter-spacing: 0.16em; margin-bottom: 14px; }
+  .ctas { flex-direction: column; width: 100%; gap: 12px; }
+  .ctas a { width: 100%; text-align: center; box-sizing: border-box; }
+  .avatar { width: 140px; height: 140px; }
+  .initials { font-size: 2rem; }
+  .aboutP { font-size: 0.95rem; }
+  .statsRow { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .statCard { padding: 14px 10px; }
+  .statNum { font-size: 1.5rem; }
+  .statLabel { font-size: 0.6rem; }
 }

@@ -13,6 +13,16 @@ const links = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
+
   return (
     <>
       <nav className={s.nav}>

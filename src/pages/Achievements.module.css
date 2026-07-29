@@ -51,6 +51,13 @@
   padding: 24px 28px;
   border-radius: 12px;
 }
+@media (max-width: 480px) {
+  .lcRing {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+  }
+}
 .ringWrap {
   position: relative;
   width: 100px;
